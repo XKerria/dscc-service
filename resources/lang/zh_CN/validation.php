@@ -151,7 +151,9 @@ return [
         'name' => '名称',
         'organization' => '单位名称',
         'phone' => '手机号',
-        'lock' => '加密锁'
+        'lock' => '加密锁',
+        'rent' => '日租金',
+        'fare' => '里程单价'
     ],
 
 ];

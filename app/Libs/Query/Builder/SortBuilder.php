@@ -10,7 +10,12 @@ use Illuminate\Support\Str;
 
 class SortBuilder extends AbstractBuilder {
 
-    protected array $modes = ['asc', 'desc'];
+    protected array $modes = [
+        'asc' => 'asc',
+        'desc' => 'desc',
+        'ascend' => 'asc',
+        'descend' => 'desc'
+    ];
 
     public function build(Builder $query, array $params): Builder {
         $args = array_filter(explode('|', Arr::get($params, 'sort', '')));
@@ -23,7 +28,7 @@ class SortBuilder extends AbstractBuilder {
 
             $field = $tmp[0];
             $mode = $temp[0];
-            $mode = in_array($mode, $this->modes) ? $mode : 'asc';
+            $mode = Arr::get($this->modes, $mode, 'asc');
             $encoding = Arr::get($temp, 1, 'utf8');
 
             if ($encoding == 'utf8') {

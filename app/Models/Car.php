@@ -15,5 +15,5 @@ class Car extends Model
 
     protected $guarded = [];
 
-    protected $casts = ['rent' => 'double'];
+    protected $casts = ['rent' => 'double', 'fare' => 'double'];
 }
