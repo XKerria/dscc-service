@@ -22,14 +22,16 @@ class User extends Authenticatable
 
     protected $hidden = ['password'];
 
-    public function setPasswordAttribute($value) {
+    public function setPasswordAttribute($value)
+    {
         $this->attributes['password'] = Hash::make($value);
     }
 
-    protected static function booted() {
+    protected static function booted()
+    {
         static::creating(function ($user) {
             if (!$user->password) {
-                $user->password = $user->username;
+                $user->password = substr($user->phone, 5);
             }
         });
     }

@@ -13,7 +13,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         if (app()->environment() == 'local') {
-            $this->call([]);
+            $this->call([
+                CategorySeeder::class,
+                ServiceSeeder::class,
+                BannerSeeder::class,
+                CarSeeder::class,
+                StaffSeeder::class,
+            ]);
         }
     }
 }

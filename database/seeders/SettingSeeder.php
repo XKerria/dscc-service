@@ -16,12 +16,12 @@ class SettingSeeder extends Seeder
         ]);
         Setting::create([
             'name' => '名称',
-            'value' => 'APP',
+            'value' => 'DSCC',
             'priority' => 1,
         ]);
         Setting::create([
             'name' => '副标题',
-            'value' => 'This is a App',
+            'value' => '超跑俱乐部',
             'priority' => 2,
         ]);
     }
