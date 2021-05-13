@@ -24,5 +24,16 @@ class SettingSeeder extends Seeder
             'value' => '超跑俱乐部',
             'priority' => 2,
         ]);
+        Setting::create([
+            'name' => '服务电话',
+            'value' => '13017466661',
+            'priority' => 3,
+        ]);
+        Setting::create([
+            'name' => '二维码',
+            'type' => 'image',
+            'value' => 'https://project-default-template.oss-cn-chengdu.aliyuncs.com/afc00701a23ac137f4a351d8fbb28af6',
+            'priority' => 4,
+        ]);
     }
 }
