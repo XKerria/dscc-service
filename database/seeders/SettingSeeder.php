@@ -11,7 +11,7 @@ class SettingSeeder extends Seeder
         Setting::create([
             'name' => 'logo',
             'type' => 'image',
-            'value' => 'https://project-default-template.oss-cn-chengdu.aliyuncs.com/afc00701a23ac137f4a351d8fbb28af6',
+            'value' => 'https://project-dscc.oss-cn-chengdu.aliyuncs.com/db19d70034be44d737fe2951aa8a86c8',
             'priority' => 0,
         ]);
         Setting::create([
@@ -25,15 +25,20 @@ class SettingSeeder extends Seeder
             'priority' => 2,
         ]);
         Setting::create([
-            'name' => '服务电话',
-            'value' => '13017466661',
+            'name' => '客服人员',
+            'value' => 'Mr.杨',
             'priority' => 3,
         ]);
         Setting::create([
-            'name' => '二维码',
-            'type' => 'image',
-            'value' => 'https://project-default-template.oss-cn-chengdu.aliyuncs.com/afc00701a23ac137f4a351d8fbb28af6',
+            'name' => '客服电话',
+            'value' => '13017466661',
             'priority' => 4,
+        ]);
+        Setting::create([
+            'name' => '客服二维码',
+            'type' => 'image',
+            'value' => 'https://project-dscc.oss-cn-chengdu.aliyuncs.com/bd7c494d59c1ced707b9a4c488433c8d',
+            'priority' => 5,
         ]);
     }
 }

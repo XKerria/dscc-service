@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
                 BannerSeeder::class,
                 CarSeeder::class,
                 StaffSeeder::class,
+                PartnerSeeder::class
             ]);
         }
     }

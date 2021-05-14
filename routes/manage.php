@@ -5,6 +5,7 @@ use App\Http\Controllers\Manage\BannerController;
 use App\Http\Controllers\Manage\BucketController;
 use App\Http\Controllers\Manage\CarController;
 use App\Http\Controllers\Manage\CategoryController;
+use App\Http\Controllers\Manage\PartnerController;
 use App\Http\Controllers\Manage\ReserveController;
 use App\Http\Controllers\Manage\ServiceController;
 use App\Http\Controllers\Manage\SettingController;
@@ -30,5 +31,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('/banners', BannerController::class);
     Route::apiResource('/cars', CarController::class);
     Route::apiResource('/staff', StaffController::class);
+    Route::apiResource('/partners', PartnerController::class);
     Route::apiResource('/reserves', ReserveController::class);
 });

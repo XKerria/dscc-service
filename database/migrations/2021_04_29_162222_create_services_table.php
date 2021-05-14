@@ -20,6 +20,7 @@ class CreateServicesTable extends Migration
             $table->string('intro', 1000)->nullable();
             $table->string('image', 1800)->nullable();
             $table->unsignedInteger('priority')->default(9999);
+            $table->string('tip')->nullable();
             $table->timestamps();
 
             $table->string('category_id', 19)->nullable();

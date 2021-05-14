@@ -13,72 +13,105 @@ class ReserveRequest extends FormRequest
     ];
     private array $map = [
         '自驾' => [
+            'date' => 'required|date|after_or_equal:today',
+            'time' => 'required|string',
             'car' => 'required|string|exists:cars,name',
-            'date' => 'required|date|after:now',
             'duration' => 'required|string',
             'remark' => 'nullable'
         ],
         '接送' => [
+            'staff' => 'required|string',
+            'date' => 'required|date|after_or_equal:today',
+            'time' => 'required|string',
             'car' => 'required|string|exists:cars,name',
-            'date' => 'required|date|after:now',
-            'duration' => 'required|string',
-            'distance' => 'required|string',
-            'staff' => 'required|string|exists:staff,name',
             'from' => 'required|array',
             'to' => 'required|array',
+            'distance' => 'required|string',
             'remark' => 'nullable'
         ],
         '代驾' => [
-            'car' => 'required|string|exists:cars,name',
-            'date' => 'required|date|after:now',
-            'duration' => 'required|string',
-            'distance' => 'required|string',
-            'staff' => 'required|string|exists:staff,name',
+            'staff' => 'required|string',
+            'date' => 'required|date|after_or_equal:today',
+            'time' => 'required|string',
             'from' => 'required|array',
             'to' => 'required|array',
+            'duration' => 'required|string',
+            'distance' => 'required|string',
             'remark' => 'nullable'
         ],
         '物品送取' => [
-            'date' => 'required|date|after:now',
-            'duration' => 'required|string',
-            'distance' => 'required|string',
+            'staff' => 'required|string',
+            'date' => 'required|date|after_or_equal:today',
+            'time' => 'required|string',
             'from' => 'required|array',
             'to' => 'required|array',
+            'duration' => 'required|string',
+            'distance' => 'required|string',
             'remark' => 'nullable'
         ],
         '家政服务' => [
-            'date' => 'required|date|after:now',
+            'date' => 'required|date|after_or_equal:today',
+            'time' => 'required|string',
             'location' => 'required|array',
+            'duration' => 'required|string',
             'remark' => 'nullable'
         ],
         '商品、奢侈品代购' => [
-            'date' => 'required|date|after:now',
-            'location' => 'required|array',
-            'thing' => 'required|string'
+            'staff' => 'required|string',
+            'date' => 'required|date|after_or_equal:today',
+            'time' => 'required|string',
+            'from' => 'required|array',
+            'to' => 'required|array',
+            'duration' => 'required|string',
+            'distance' => 'required|string',
+            'remark' => 'nullable'
         ],
         '商务、酒会、聚会、娱乐出席' => [
-            'business' => 'required|string',
-            'staff' => 'required|string|exists:staff,name',
-            'date' => 'required|date|after:now',
+            'staff' => 'required|string',
+            'date' => 'required|date|after_or_equal:today',
+            'time' => 'required|string',
+            'location' => 'required|array',
             'duration' => 'required|string',
             'remark' => 'nullable'
         ],
         '美容、保养、维修、紧急救援' => [
-            'business' => 'required|string',
             'model' => 'required|string',
-            'date' => 'required|date|after:now',
-            'location' => 'nullable|array',
+            'business' => 'required|string',
             'remark' => 'nullable',
         ],
-        '酒店、票务、娱乐预订' => [
-            'business' => 'required|string',
-            'date' => 'required|date|after:now',
+        '酒店预订' => [
+            'staff' => 'required|string',
+            'identity' => 'required|string|size:18',
+            'partner' => 'nullable|string',
+            'specify' => 'required_without:partner|array',
+            'start' => 'required|date',
+            'end' => 'nullable|date|after_or_equal:start',
+            'room' => 'required|string',
+            'remark' => 'nullable',
+        ],
+        '票务预订' => [
+            'staff' => 'required|string',
+            'identity' => 'required|string|size:18',
+            'partner' => 'nullable|string',
+            'specify' => 'required_without:partner|array',
+            'date' => 'required|date',
+            'time' => 'required|string',
+            'remark' => 'nullable',
+        ],
+        '娱乐预订' => [
+            'staff' => 'required|string',
+            'identity' => 'required|string|size:18',
+            'partner' => 'nullable|string',
+            'specify' => 'required_without:partner|array',
+            'date' => 'required|date',
+            'time' => 'required|string',
             'remark' => 'nullable',
         ],
         '出行、接待、宴会、求婚、旅行定制' => [
             'business' => 'required|string',
-            'date' => 'required|date|after:now',
-            'remark' => 'nullable',
+            'date' => 'required|date|after_or_equal:today',
+            'time' => 'required|string',
+            'desc' => 'required|string|max:1000',
         ],
     ];
     public function authorize()

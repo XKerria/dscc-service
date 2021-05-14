@@ -15,8 +15,8 @@ return [
 
     'accepted' => 'The :attribute must be accepted.',
     'active_url' => 'The :attribute is not a valid URL.',
-    'after' => 'The :attribute must be a date after :date.',
-    'after_or_equal' => 'The :attribute must be a date after or equal to :date.',
+    'after' => ':attribute必须大于:date',
+    'after_or_equal' => ':attribute必须大于等于:date',
     'alpha' => 'The :attribute may only contain letters.',
     'alpha_dash' => 'The :attribute may only contain letters, numbers, dashes and underscores.',
     'alpha_num' => 'The :attribute may only contain letters and numbers.',
@@ -24,7 +24,7 @@ return [
     'before' => 'The :attribute must be a date before :date.',
     'before_or_equal' => 'The :attribute must be a date before or equal to :date.',
     'between' => [
-        'numeric' => 'The :attribute must be between :min and :max.',
+        'numeric' => ':attribute取值范围为 :min ~ :max',
         'file' => 'The :attribute must be between :min and :max kilobytes.',
         'string' => ':attribute长度为 :min ~ :max 个字符',
         'array' => 'The :attribute must have between :min and :max items.',
@@ -148,12 +148,22 @@ return [
     */
 
     'attributes' => [
-        'name' => '名称',
-        'organization' => '单位名称',
+        'car' => '车型',
+        'date' => '预约时间',
+        'duration' => '时长',
+        'name' => '姓名',
         'phone' => '手机号',
+        'from' => '起点',
+        'to' => '目的地',
+        'staff' => '服务人员',
+        'location' => '位置',
+        'remark' => '备注',
+        'model' => '车辆型号',
+        'business' => '服务类型',
+        'organization' => '单位名称',
         'lock' => '加密锁',
         'rent' => '日租金',
-        'fare' => '里程单价'
+        'fare' => '里程单价',
     ],
 
 ];
