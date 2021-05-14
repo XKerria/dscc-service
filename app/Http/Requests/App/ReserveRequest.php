@@ -40,7 +40,6 @@ class ReserveRequest extends FormRequest
             'remark' => 'nullable'
         ],
         '物品送取' => [
-            'staff' => 'required|string',
             'date' => 'required|date|after_or_equal:today',
             'time' => 'required|string',
             'from' => 'required|array',
@@ -108,9 +107,7 @@ class ReserveRequest extends FormRequest
             'remark' => 'nullable',
         ],
         '出行、接待、宴会、求婚、旅行定制' => [
-            'business' => 'required|string',
-            'date' => 'required|date|after_or_equal:today',
-            'time' => 'required|string',
+            'staff' => 'required|string',
             'desc' => 'required|string|max:1000',
         ],
     ];
