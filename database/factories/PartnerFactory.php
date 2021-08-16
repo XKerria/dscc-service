@@ -13,8 +13,10 @@ class PartnerFactory extends Factory
     {
         return [
             'name' => $this->faker->company,
-            'type' => $this->faker->randomElement(['hotel', 'ticket', 'ent']),
-            'intro' => $this->faker->sentence
+            'type' => $this->faker->randomElement(['酒店', '票务', '娱乐']),
+            'intro' => $this->faker->paragraph,
+            'contact' => $this->faker->name,
+            'contact_num' => $this->faker->phoneNumber,
         ];
     }
 }

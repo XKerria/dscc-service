@@ -17,8 +17,7 @@ class CreateSettingsTable extends Migration
             $table->string('id', 19)->primary();
             $table->string('name', 32)->unique();
             $table->text('value')->nullable();
-            $table->enum('type', ['string', 'image', 'json'])->default('string');
-            $table->unsignedInteger('priority')->default(9999);
+            $table->enum('type', ['string', 'image', 'array', 'object'])->default('string');
         });
     }
 

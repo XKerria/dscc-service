@@ -16,7 +16,8 @@ class CategorySeeder extends Seeder
                 ['name' => '秘书服务', 'intro' => '为您提供DSCC超跑俱乐部旗下秘书服务'],
                 ['name' => '汽车服务', 'intro' => '为您提供DSCC超跑俱乐部旗下汽车服务'],
                 ['name' => '预订服务', 'intro' => '为您提供DSCC超跑俱乐部旗下预订服务'],
-                ['name' => '定制服务', 'intro' => '为您提供DSCC超跑俱乐部旗下定制服务']
+                ['name' => '定制服务', 'intro' => '为您提供DSCC超跑俱乐部旗下定制服务'],
+                ['name' => '托管服务', 'intro' => '为您提供DSCC超跑俱乐部旗下车辆托管、收费垫资、征信代购等服务'],
             ]);
     }
 }

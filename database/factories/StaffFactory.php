@@ -13,9 +13,10 @@ class StaffFactory extends Factory
     {
         return [
             'name' => $this->faker->name('female'),
-            'gender' => 0,
-            'image' => $this->faker->imageUrl(),
-            'type' => $this->faker->randomElement(['driver', 'secretory', 'housekeeper'])
+            'gender' => 2,
+            'avatar_url' => $this->faker->imageUrl(),
+            'type' => $this->faker->randomElement(['司机', '秘书', '家政']),
+            'remark' => $this->faker->paragraph
         ];
     }
 }

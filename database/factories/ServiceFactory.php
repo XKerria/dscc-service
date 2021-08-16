@@ -13,11 +13,17 @@ class ServiceFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            'cover' => $this->faker->imageUrl(),
             'intro' => $this->faker->paragraph,
-            'images' => [$this->faker->imageUrl()],
+            'tip' => $this->faker->paragraph,
+            'content' => $this->faker->randomHtml(),
             'priority' => $this->faker->numberBetween(0, 9999),
-            'category_id' => null
+            'icon_url' => $this->faker->imageUrl(),
+            'video_url' => $this->faker->imageUrl(),
+            'category_id' => null,
+            'staff_type' => null,
+            'partner_type' => null,
+            'prices' => null,
+            'items' => null,
         ];
     }
 }

@@ -16,8 +16,10 @@ class CreatePartnersTable extends Migration
         Schema::create('partners', function (Blueprint $table) {
             $table->string('id', 19)->primary();
             $table->string('name', 64);
-            $table->enum('type', ['hotel', 'ticket', 'ent']);
-            $table->string('intro')->nullable();
+            $table->string('type');
+            $table->string('intro', 1024)->nullable();
+            $table->string('contact')->nullable();
+            $table->string('contact_num')->nullable();
             $table->timestamps();
         });
     }

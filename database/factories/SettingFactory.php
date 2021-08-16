@@ -23,7 +23,8 @@ class SettingFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence($this->faker->numberBetween(1,3)),
-            'content' => []
+            'value' => $this->faker->sentence,
+            'type' => 'string'
         ];
     }
 }

@@ -12,8 +12,8 @@ class BannerFactory extends Factory
     public function definition()
     {
         return [
-            'type' => $this->faker->randomElement(['banner', 'guide', 'qrcode']),
-            'image' => $this->faker->imageUrl(),
+            'type' => $this->faker->randomElement(['引导页', 'Banner']),
+            'image_url' => $this->faker->imageUrl(),
             'priority' => $this->faker->numberBetween(0, 9999)
         ];
     }

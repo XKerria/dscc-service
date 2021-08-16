@@ -6,6 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "ext-openssl": "*",
         "alibabacloud/sdk": "^1.8",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
@@ -13,6 +15,7 @@
         "kra8/laravel-snowflake": "^2.0",
         "laravel/framework": "^8.12",
         "laravel/sanctum": "^2.10",
+        "laravel/telescope": "^4.6",
         "laravel/tinker": "^2.5"
     },
     "require-dev": {

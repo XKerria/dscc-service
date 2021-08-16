@@ -2,37 +2,36 @@
 
 namespace App\Models;
 
-use App\Models\Abilities\DateFormatable;
 use App\Models\Abilities\Snowflakable;
+use App\Models\Scopes\ResolveScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Hash;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use HasApiTokens,
-        HasFactory,
-        Notifiable,
+    use HasFactory,
         Snowflakable,
-        DateFormatable;
+        ResolveScope;
 
     protected $guarded = [];
 
-    protected $hidden = ['password'];
+    protected $with = ['vip'];
 
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = Hash::make($value);
+    public function vip(): BelongsTo {
+        return $this->belongsTo(Vip::class);
     }
 
-    protected static function booted()
-    {
-        static::creating(function ($user) {
-            if (!$user->password) {
-                $user->password = substr($user->phone, 5);
-            }
-        });
+    public function records(): HasMany {
+        return $this->hasMany(Record::class);
+    }
+
+    public function coupons() {
+        return $this->belongsToMany(Coupon::class, 'tickets')
+            ->using(Ticket::class)
+            ->as('ticket')
+            ->withPivot(['id', 'partner_id'])
+            ->withTimestamps();
     }
 }

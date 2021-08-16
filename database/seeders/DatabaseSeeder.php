@@ -8,18 +8,21 @@ class DatabaseSeeder extends Seeder
 {
     public function run() {
         $this->call([
-            UserSeeder::class,
-            SettingSeeder::class
+            AdminSeeder::class,
+            SettingSeeder::class,
+            VipSeeder::class,
+            BannerSeeder::class,
+            CategorySeeder::class,
+            ServiceSeeder::class,
         ]);
 
         if (app()->environment() == 'local') {
             $this->call([
-                CategorySeeder::class,
-                ServiceSeeder::class,
-                BannerSeeder::class,
-                CarSeeder::class,
+                VehicleSeeder::class,
                 StaffSeeder::class,
-                PartnerSeeder::class
+                PartnerSeeder::class,
+                CouponSeeder::class,
+                SaleSeeder::class
             ]);
         }
     }

@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\User;
+use App\Models\Admin;
 
 return [
-    User::class => '用户',
+    Admin::class => '用户',
 ];

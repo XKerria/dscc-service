@@ -16,11 +16,18 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->string('id', 19)->primary();
             $table->string('name');
-            $table->string('cover', 1800)->nullable();
             $table->string('intro', 1000)->nullable();
-            $table->string('image', 1800)->nullable();
-            $table->unsignedInteger('priority')->default(9999);
             $table->string('tip')->nullable();
+            $table->string('staff_type')->nullable();
+            $table->string('partner_type')->nullable();
+            $table->text('content')->nullable();
+            $table->json('prices')->nullable();
+            $table->json('items')->nullable();
+            $table->unsignedInteger('priority')->default(9999);
+
+            $table->string('icon_url', 1024)->nullable();
+            $table->string('video_url', 1024)->nullable();
+
             $table->timestamps();
 
             $table->string('category_id', 19)->nullable();
