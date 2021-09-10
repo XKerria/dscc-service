@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 Route::apiResource('/test', TestController::class);
 
-Route::apiResource('/settings', SettingController::class)->only(['index']);
+Route::apiResource('/settings', SettingController::class)->only(['index', 'show']);
 Route::post('/auth/login', [AuthController::class, 'login']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
@@ -34,6 +34,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/auth/refresh', [AuthController::class, 'refresh']);
 
     Route::apiResource('/admins', AdminController::class);
+    Route::apiResource('/settings', SettingController::class)->only(['update']);
 
     Route::apiResource('/banners', BannerController::class);
     Route::apiResource('/vehicles', VehicleController::class);
