@@ -37,6 +37,7 @@ class UserRequest extends FormRequest
             'province' => 'nullable',
             'city' => 'nullable',
             'gender' => 'nullable',
+            'remark' => 'nullable|string',
         ];
     }
 }
