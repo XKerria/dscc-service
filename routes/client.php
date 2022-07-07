@@ -12,6 +12,7 @@ use App\Http\Controllers\Client\SettingController;
 use App\Http\Controllers\Client\StaffController;
 use App\Http\Controllers\Client\TicketController;
 use App\Http\Controllers\Client\UserController;
+use App\Http\Controllers\Client\VipController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,3 +31,4 @@ Route::apiResource('/partners', PartnerController::class)->only(['index']);
 Route::apiResource('/sales', SaleController::class)->only(['index']);
 Route::apiResource('/reserves', ReserveController::class)->only(['index', 'store']);
 Route::apiResource('/tickets', TicketController::class)->only(['index', 'store']);
+Route::apiResource('/vips', VipController::class)->only(['index']);
